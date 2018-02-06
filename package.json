@@ -1,0 +1,14 @@
+{
+  "name": "peeradd",
+  "version": "0.1.0",
+  "bin": {
+    "peeradd": "index.js"
+  },
+  "author": "Deepak Sharma <dpkshrma01@gmail.com>",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
