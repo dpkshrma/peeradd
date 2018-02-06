@@ -1,10 +1,16 @@
 {
   "name": "peeradd",
   "version": "0.1.1",
+  "description": "Install peer dependencies without any fuss",
+  "author": "Deepak Sharma <dpkshrma01@gmail.com>",
+  "repository": "github:dpkshrma/peeradd",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.4"
+  },
   "bin": {
     "peeradd": "index.js"
   },
-  "author": "Deepak Sharma <dpkshrma01@gmail.com>",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^4.9.0",
