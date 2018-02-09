@@ -3,7 +3,9 @@
   "version": "0.1.1",
   "description": "Install peer dependencies without any fuss",
   "author": "Deepak Sharma <dpkshrma01@gmail.com>",
-  "repository": "github:dpkshrma/peeradd",
+  "repository": "https://github.com/dpkshrma/peeradd",
+  "homepage": "https://github.com/dpkshrma/peeradd",
+  "bugs": "https://github.com/dpkshrma/peeradd/issues",
   "license": "MIT",
   "engines": {
     "node": ">=8.9.4"
