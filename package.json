@@ -13,7 +13,10 @@
   "bin": {
     "peeradd": "index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^4.1.0"
+  },
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",

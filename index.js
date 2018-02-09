@@ -1,11 +1,26 @@
 #!/usr/bin/env node
 
 const { exec } = require('child_process');
+const { options: { getOptions }, usage } = require('./cmd');
 
-const [,, inputDep, opt] = process.argv;
+const options = getOptions();
+
+const useYarn = options['use-yarn'];
+const { dev: devDep, help } = options;
+
+const [inputDep] = options._unknown || []; // eslint-disable-line
+
+if (!inputDep) {
+  console.log(usage);
+  process.exit(1);
+}
+if (help) {
+  console.log(usage);
+  process.exit(0);
+}
 
 let pkgManager = 'npm';
-if (opt === '--use-yarn' || opt === '-y') {
+if (useYarn) {
   pkgManager = 'yarn';
 }
 
@@ -20,14 +35,25 @@ const handleErrors = (error, stderr) => {
   }
 };
 
-const installDep = (dep) => {
-  console.log(`Installing ${dep} ...`);
+const getCommand = (dep) => {
   let cmd;
   if (pkgManager === 'npm') {
     cmd = `npm install ${dep}`;
+    if (devDep) {
+      cmd = `${cmd} --save-dev`;
+    }
   } else {
     cmd = `yarn add ${dep}`;
+    if (devDep) {
+      cmd = `${cmd} --dev`;
+    }
   }
+  return cmd;
+};
+
+const installDep = (dep) => {
+  console.log(`Installing ${dep} ...`);
+  const cmd = getCommand(dep);
   return new Promise((resolve) => {
     exec(cmd, (peerError, peerStdout, peerStderr) => {
       handleErrors(peerError, peerStderr);
