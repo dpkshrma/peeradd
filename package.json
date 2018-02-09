@@ -1,6 +1,6 @@
 {
   "name": "peeradd",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Install peer dependencies without any fuss",
   "author": "Deepak Sharma <dpkshrma01@gmail.com>",
   "repository": "https://github.com/dpkshrma/peeradd",
